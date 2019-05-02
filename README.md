@@ -109,3 +109,32 @@ $git clone git@github.com:Fkohta/nvim.git
 ```
 
 あとはNeoVimを起動すれば，プラグインのインストール等を勝手にやってくれるはず．
+
+---
+
+## 依存するライブラリ等
+
+### python-client
+
+`pip`を使ってインストールする．
+
+```console
+$pip install pynvim
+$pip3 install pynvim
+```
+
+### jedi
+
+`deoplete-python`に必要．`pip`でインストール出来る．
+
+```console
+$pip install jedi
+```
+
+### clang
+
+`deoplete-clang`に必要．`apt`でインストール出来る．
+
+```console
+$sudo apt install clang
+```
