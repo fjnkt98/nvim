@@ -69,6 +69,8 @@ $sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9DBB0BE9366964F13
 $sudo touch /etc/apt/sources.list.d/neovim-ppa.list
 ```
 
+ファイルの中には次の2行を記述する．
+
 ```none:/etc/apt/sources.list.d/neovim-ppa.list
 deb http://ppa.launchpad.net/neovim-ppa/stable/ubuntu xenial main 
 deb-src http://ppa.launchpad.net/neovim-ppa/stable/ubuntu xenial main
