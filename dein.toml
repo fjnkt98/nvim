@@ -4,7 +4,8 @@ repo = 'Shougo/dein.vim'
 
 # complete parenthesis and etc.
 [[plugins]]
-repo = 'Townk/vim-autoclose'
+#repo = 'Townk/vim-autoclose'
+repo = 'cohama/lexima.vim'
 
 # completion framework "deoplete"
 [[plugins]]
