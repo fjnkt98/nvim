@@ -27,12 +27,12 @@ hook_add = '''
 repo = 'deoplete-plugins/deoplete-jedi'
 
 # deoplete-plugin "clang"
-#[[plugins]]
-#repo = 'zchee/deoplete-clang'
-#hook_source = '''
-#    let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-6.0/lib/libclang.so'
-#    let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
-#'''
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+hook_add = '''
+    let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-6.0/lib/libclang.so'
+    let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+'''
 
 # color schemer
 [[plugins]]
