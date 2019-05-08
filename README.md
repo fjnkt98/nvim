@@ -12,6 +12,7 @@ WindowsだとVSCodeを使うので，主にLinux上で使うことになる．Ma
 - Raspbian 
 
 の2つ．RaspbianはDebian系LinuxでありUbuntuとは少し勝手が違うので，NeoVimのインスト―ル時に手順が少し異なる．
+**メインで使うのはUbuntuであるため，主な設定はUbntu用のものである．Raspbianで使う場合は設定を見直すこと．**
 
 ## 参考にしたサイト
 
@@ -30,6 +31,7 @@ WindowsだとVSCodeを使うので，主にLinux上で使うことになる．Ma
 
 1. `NeoVim`本体のインストール
 1. `dein.vim`のインストール 
+1. 依存ライブラリのインストール
 1. リポジトリのクローン
 
 となる．
@@ -99,7 +101,11 @@ $curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh 
 $sh ./installer.sh ~/.cache/dein
 ```
 
-### 3. リポジトリのクローン
+### 3. 依存ライブラリのインストール
+
+Neovim本体及びいくつかのプラグインが依存するライブラリ等のインストールをする必要がある．依存ライブラリはこの記事の下の方に書いてあるのでそれに従ってインストールする．
+
+### 4. リポジトリのクローン
 
 管理用リポジトリをクローンする．クローンする場所は`~/.config`でなければならない．
 
@@ -137,4 +143,5 @@ $pip install jedi
 
 ```console
 $sudo apt install clang
+$sudo apt install libclang-dev
 ```
