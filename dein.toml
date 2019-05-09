@@ -45,11 +45,6 @@ hook_add = '''
 # plugin for HTML and CSS
 [[plugins]]
 repo = 'mattn/emmet-vim'
-hook_add = '''
-    let g:user_emmet_mode = 'n'
-    let g:user_emmet_install_global = 0
-    autocmd FileType html, css EmmetInstall
-'''
 
 # color schemer
 [[plugins]]
