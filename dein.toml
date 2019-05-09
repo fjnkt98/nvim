@@ -42,7 +42,7 @@ hook_add = '''
     let g:ros_build_system = 'catkin'
 '''
 
-# HTML complation plugin
+# plugin for HTML and CSS
 [[plugins]]
 repo = 'mattn/emmet-vim'
 hook_add = '''
