@@ -7,6 +7,7 @@ set expandtab
 set splitright
 set clipboard=unnamed
 set hls
+set nowrap
 
 if &compatible
     set nocompatible

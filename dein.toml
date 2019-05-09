@@ -7,9 +7,9 @@ repo = 'Shougo/dein.vim'
 #repo = 'Townk/vim-autoclose'
 repo = 'cohama/lexima.vim'
 hook_add = '''
-    call lexima#add_rule({'char':'<', 'input_after':'>', 'filetype':['html', 'xml']})
-    call lexima#add_rule({'char':'>', 'at':'\%#>', 'leave':1, 'filetype':['html', 'xml']})
-    call lexima#add_rule({'char':'<BS>', 'at':'<\%#>', 'delete':1, 'filetype':['html', 'xml']})
+    call lexima#add_rule({'char':'<', 'input_after':'>', 'filetype':['html', 'xml', 'launch']})
+    call lexima#add_rule({'char':'>', 'at':'\%#>', 'leave':1, 'filetype':['html', 'xml', 'launch']})
+    call lexima#add_rule({'char':'<BS>', 'at':'<\%#>', 'delete':1, 'filetype':['html', 'xml', 'launch']})
 '''
 
 # completion framework "deoplete"
@@ -40,6 +40,15 @@ repo = 'taketwo/vim-ros'
 hook_add = '''
     let g:ros_make = 'current'
     let g:ros_build_system = 'catkin'
+'''
+
+# HTML complation plugin
+[[plugins]]
+repo = 'mattn/emmet-vim'
+hook_add = '''
+    let g:user_emmet_mode = 'n'
+    let g:user_emmet_install_global = 0
+    autocmd FileType html, css EmmetInstall
 '''
 
 # color schemer
