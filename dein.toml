@@ -2,9 +2,8 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-# complete parenthesis and etc.
+# lexima plugin
 [[plugins]]
-#repo = 'Townk/vim-autoclose'
 repo = 'cohama/lexima.vim'
 hook_add = '''
     call lexima#add_rule({'char':'<', 'input_after':'>', 'filetype':['html', 'xml', 'launch']})
@@ -12,7 +11,7 @@ hook_add = '''
     call lexima#add_rule({'char':'<BS>', 'at':'<\%#>', 'delete':1, 'filetype':['html', 'xml', 'launch']})
 '''
 
-# completion framework "deoplete"
+# deoplete.nvim plugin
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertEnter'
@@ -22,18 +21,56 @@ hook_add = '''
     inoremap <expr><S-Tab> pumvisible() ? "\<UP>" : "\<S-Tab>"
 '''
 
-# deoplete-plugin "jedi" 
+# neoinclude.vim
 [[plugins]]
-repo = 'deoplete-plugins/deoplete-jedi'
+repo = 'Shougo/neoinclude.vim'
+on_ft = ['c', 'cpp']
+depends = ['deoplete.nvim']
 
-# deoplete-plugin "clang"
-# In Ubuntu 18.04, llvm-6.0 is used. Set according to your environment.
+# *---Language Server Protocol client plugins---* 
 [[plugins]]
-repo = 'zchee/deoplete-clang'
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
-    let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-6.0/lib/libclang.so'
-    let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+    \ 'name': 'clangd',
+    \ 'cmd' : {server_info->['clangd']},
+    \ 'whitelist' : ['c', 'cpp'],
+    \ })
+endif
+
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+    \ 'name': 'pyls',
+    \ 'cmd' : {server_info->['pyls']},
+    \ 'whitelist' : ['python'],
+    \ })
+endif
 '''
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+# *--------------------------------------------*
+
+# deoplete-jedi
+#[[plugins]]
+#repo = 'deoplete-plugins/deoplete-jedi'
+
+# deoplete-clang
+# In Ubuntu 18.04, llvm-6.0 is used. Set according to your environment.
+#[[plugins]]
+#repo = 'zchee/deoplete-clang'
+#hook_add = '''
+#    let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-6.0/lib/libclang.so'
+#    let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+#'''
+
 # ROS plugin
 [[plugins]]
 repo = 'taketwo/vim-ros'
@@ -42,7 +79,7 @@ hook_add = '''
     let g:ros_build_system = 'catkin'
 '''
 
-# plugin for HTML and CSS
+# emmet plugin
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
