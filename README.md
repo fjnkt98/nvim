@@ -24,6 +24,7 @@ WindowsだとVSCodeを使うので，主にLinux上で使うことになる．Ma
 - [RaspbianにUbuntu用のPPAを追加する](https://qiita.com/hnw/items/734f82bee26a40269c1b#fn1)
 - [What Debian version are the different Ubuntu versions based on?](https://askubuntu.com/questions/445487/what-debian-version-are-the-different-ubuntu-versions-based-on)：Debian系のバージョンに対応するUbuntuのバージョンの表
 - [raspbian（Raspberry Pi）のバージョン確認方法](https://www.checksite.jp/raspbian-version-check/)
+- [neovim/VimでLanguage Server Protocolを利用するための基礎知識と設定方法](https://qiita.com/succi0303/items/cd30d0ea40d419d4431c)
 
 ## 作業手順
 
@@ -144,4 +145,27 @@ $pip install jedi
 ```console
 $sudo apt install clang
 $sudo apt install libclang-dev
+```
+
+### python-language-server
+
+`vim-lsp`にて使う，PythonのLanguage Server．`pip`でインストール出来る．
+
+```console
+$pip install python-language-server
+```
+
+### typescript-language-server
+
+`vim-lsp`にて使う，TypeScriptのLanguage Server．TypeScriptの言語サーバだが，JavaScriptにも対応している．インストールには`npm`を使う．`Node.js`をインストールしている場合は既にあるはず．
+
+```console
+# npmプロジェクトのディレクトリで．但しグローバルインストールなのでどのプロジェクトでもよい
+npm install -g typescript typescript-language-server
+```
+
+なお，環境によっては上のコマンドでインストールできない場合がある．その場合は`sudo`を付けて行えばインストールは出来る(推奨はされてないっぽいけど)．
+
+```console
+sudo npm install -g typescript typescript-language-server
 ```
