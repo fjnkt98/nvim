@@ -50,6 +50,14 @@ if executable('clangd')
     \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
     \ })
 endif
+
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+    \ 'name': 'pyls',
+    \ 'cmd' : {server_info->['pyls']},
+    \ 'whitelist': ['python'],
+    \ })
+endif
 '''
 
 [[plugins]]
@@ -58,10 +66,6 @@ repo = 'prabirshrestha/asyncomplete.vim'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 # *--------------------------------------------*
-
-# deoplete-jedi
-[[plugins]]
-repo = 'deoplete-plugins/deoplete-jedi'
 
 # ROS plugin
 [[plugins]]
