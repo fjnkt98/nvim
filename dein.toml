@@ -42,6 +42,14 @@ if executable('typescript-language-server')
     \ 'whitelist': ['javascript', 'javascript.jsx']
     \ })
 endif
+
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+    \ 'name': 'clangd',
+    \ 'cmd': {server_info->['clangd', '-background-index']},
+    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+    \ })
+endif
 '''
 
 [[plugins]]
@@ -54,15 +62,6 @@ repo = 'prabirshrestha/asyncomplete-lsp.vim'
 # deoplete-jedi
 [[plugins]]
 repo = 'deoplete-plugins/deoplete-jedi'
-
-# deoplete-clang
-# In Ubuntu 18.04, llvm-6.0 is used. Set according to your environment.
-[[plugins]]
-repo = 'zchee/deoplete-clang'
-hook_add = '''
-    let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-6.0/lib/libclang.so'
-    let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
-'''
 
 # ROS plugin
 [[plugins]]
