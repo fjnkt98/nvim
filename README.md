@@ -130,17 +130,9 @@ $pip install pynvim
 $pip3 install pynvim
 ```
 
-### jedi
-
-`deoplete-python`に必要．`pip`でインストール出来る．
-
-```console
-$pip install jedi
-```
-
 ### clangd
 
-`vim-lsp`に必要．`apt`でインストール出来る．
+`vim-lsp`にて使う，C言語のLanguage Server．`apt`でインストール出来る．
 
 ```console
 $sudo apt install clang libclang-dev clang-tools-extra
