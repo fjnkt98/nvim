@@ -135,7 +135,7 @@ $pip3 install pynvim
 `vim-lsp`にて使う，C言語のLanguage Server．`apt`でインストール出来る．
 
 ```console
-$sudo apt install clang libclang-dev clang-tools-extra
+$sudo apt install clang libclang-dev
 ```
 
 ### python-language-server
