@@ -12,20 +12,20 @@ hook_add = '''
 '''
 
 # deoplete.nvim plugin
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_event = 'InsertEnter'
-hook_add = '''
-    let g:deoplete#enable_at_startup = 1
-    inoremap <expr><Tab> pumvisible() ? "\<DOWN>" : "\<Tab>"
-    inoremap <expr><S-Tab> pumvisible() ? "\<UP>" : "\<S-Tab>"
-'''
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
+#on_event = 'InsertEnter'
+#hook_add = '''
+#    let g:deoplete#enable_at_startup = 1
+#    inoremap <expr><Tab> pumvisible() ? "\<DOWN>" : "\<Tab>"
+#    inoremap <expr><S-Tab> pumvisible() ? "\<UP>" : "\<S-Tab>"
+#'''
 
 # neoinclude.vim
-[[plugins]]
-repo = 'Shougo/neoinclude.vim'
-on_ft = ['c', 'cpp']
-depends = ['deoplete.nvim']
+#[[plugins]]
+#repo = 'Shougo/neoinclude.vim'
+#on_ft = ['c', 'cpp']
+#depends = ['deoplete.nvim']
 
 # *------------Language Server Protocol client plugins--------------* 
 [[plugins]]
