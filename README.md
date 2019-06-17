@@ -130,9 +130,33 @@ $pip install pynvim
 $pip3 install pynvim
 ```
 
+### Node.js
+
+LSPクライアントである`coc.nvim`はTypeScript製であるので，これを利用するには`Node.js`をインストールする必要がある．`Node.js`のインストール方法はLinuxディストリビューションによって少し異なる．
+
+参考：[Node.js - Github](https://github.com/nodesource/distributions/blob/master/README.md#deb)
+
+Ubuntuの場合(Node.js v10.x)
+```console
+$curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+$sudo apt-get install -y nodejs
+```
+
+### yarn
+
+`coc.nvim`はNode.jsのパッケージ管理ソフトである`yarn`に依存している．但し，`coc.nvim`のとあるコマンドを実行すると`yarn`は自動でインストールされるため，必ずしもここでインストールする必要は無い．
+
+`yarn`をインストールするには次のコマンドを実行する．
+
+```console
+$curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+$echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+$sudo apt update && sudo apt install yarn
+```
+
 ### clangd
 
-`vim-lsp`にて使う，C言語のLanguage Server．`apt`でインストール出来る．
+C言語のLanguage Server．`apt`でインストール出来る．
 
 ```console
 $sudo apt install clang libclang-dev
@@ -140,7 +164,7 @@ $sudo apt install clang libclang-dev
 
 ### python-language-server
 
-`vim-lsp`にて使う，PythonのLanguage Server．`pip`でインストール出来る．
+PythonのLanguage Server．`pip`でインストール出来る．
 
 ```console
 $pip install python-language-server
@@ -148,7 +172,7 @@ $pip install python-language-server
 
 ### typescript-language-server
 
-`vim-lsp`にて使う，TypeScriptのLanguage Server．TypeScriptの言語サーバだが，JavaScriptにも対応している．インストールには`npm`を使う．`Node.js`をインストールしている場合は既にあるはず．
+TypeScriptのLanguage Server．TypeScriptの言語サーバだが，JavaScriptにも対応している．インストールには`npm`を使う．`Node.js`をインストールしている場合は既にあるはず．
 
 ```console
 # npmプロジェクトのディレクトリで．但しグローバルインストールなのでどのプロジェクトでもよい
