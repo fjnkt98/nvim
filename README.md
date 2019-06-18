@@ -4,14 +4,14 @@
 
 ## 想定する環境
 
-WindowsだとVSCodeを使うので，主にLinux上で使うことになる．Macは知らない．
+CLIしか使えないLinuxリモート環境で使用することを想定する．私の場合はRaspberry PiにSSH接続して開発する際である．
 
-自分が使うLinuxは主に
+Raspberry Piでは以下のOSを使用する．
 
-- Ubuntu 16.04LTS or 18.04LTS
+- Ubuntu 18.04LTS
 - Raspbian 
 
-の2つ．RaspbianはDebian系LinuxでありUbuntuとは少し勝手が違うので，NeoVimのインスト―ル時に手順が少し異なる．
+RaspbianはDebian系LinuxでありUbuntuとは少し勝手が違うので，NeoVimのインスト―ル時に手順が少し異なる．
 **メインで使うのはUbuntuであるため，主な設定はUbntu用のものである．Raspbianで使う場合は設定を見直すこと．**
 
 ## 参考にしたサイト
@@ -52,7 +52,10 @@ $sudo apt-get install python-dev python-pip python3-dev python3-pip
 
 2019/05/02現在，Ubuntu18.04LTSでは，`NeoVim 0.3.4`がインストールされた．
 
-#### Raspbianの場合
+<details>
+<summary>Raspbianの場合</summary>
+<pre>
+<code>
 
 NeoVimはDebianの公式リポジトリに対応してはいるが，それでインストール出来るバージョンはかなり古いバージョンしかない．なので，別の方法でインストールする．具体的には，RaspbianにUbuntu用のPPAリポジトリを追加し，そこからインストールする．
 
@@ -92,10 +95,14 @@ $sudo apt install neovim
 $nvim -v
 ```
 
+</code>
+</pre>
+</details>
+
 ### 2. dein.vimのインストール
 
 プラグイン管理ツールである`dein.vim`をインストールしておく．一応，これが無い場合に自動インスト―ルするような設定は行っているが，念のため．
-手順は[`dein.vim`のリポジトリ](https://github.com/Shougo/dein.vim/blob/master/README.md)に書いてある通りを実行すればよい．尚，設定ファイルは自分のリポジトリに既にあるため書かなくてよい．また，インストールするディレクトリは別段決まっているというわけではないが，ここでは`~/.cache/dein`とする．
+手順は[`dein.vim`のリポジトリ](https://github.com/Shougo/dein.vim/blob/master/README.md)に書いてある通りを実行すればよい．尚，設定ファイルは本リポジトリに既にあるため書かなくてよい．また，インストールするディレクトリは別段決まっているというわけではないが，ここでは`~/.cache/dein`とする．
 
 ```console
 $curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
