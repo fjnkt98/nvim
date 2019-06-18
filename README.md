@@ -124,6 +124,8 @@ $git clone git@github.com:Fkohta/nvim.git
 
 ## 依存するライブラリ等
 
+ここに記述しているのはUbuntu18.04LTSでのものである．Raspbianで利用する場合は随時調べて行うこと．
+
 ### python-client
 
 `pip`を使ってインストールする．
@@ -162,7 +164,13 @@ $sudo apt update && sudo apt install yarn
 C言語のLanguage Server．`apt`でインストール出来る．
 
 ```console
-$sudo apt install clang libclang-dev
+$sudo apt install clang libclang-dev clang-tools
+```
+
+`clangd`コマンドを使えるようになればインストール完了．
+
+```console
+$clangd --version
 ```
 
 ### python-language-server
