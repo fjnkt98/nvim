@@ -55,7 +55,6 @@ $sudo apt-get install python-dev python-pip python3-dev python3-pip
 <details>
 <summary>Raspbianの場合</summary>
 <pre>
-<code>
 
 NeoVimはDebianの公式リポジトリに対応してはいるが，それでインストール出来るバージョンはかなり古いバージョンしかない．なので，別の方法でインストールする．具体的には，RaspbianにUbuntu用のPPAリポジトリを追加し，そこからインストールする．
 
@@ -95,7 +94,6 @@ $sudo apt install neovim
 $nvim -v
 ```
 
-</code>
 </pre>
 </details>
 
