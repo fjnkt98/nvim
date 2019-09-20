@@ -28,14 +28,6 @@ hook_add = '''
 '''
 # *---------------------------------------------------------*
 
-# ROS plugin
-[[plugins]]
-repo = 'taketwo/vim-ros'
-hook_add = '''
-    let g:ros_make = 'current'
-    let g:ros_build_system = 'catkin'
-'''
-
 # emmet plugin
 [[plugins]]
 repo = 'mattn/emmet-vim'
@@ -47,15 +39,22 @@ hook_add = '''
     noremap <C-n> :NERDTreeToggle<CR>
 '''
 
-# fugitive.vim plugin
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
 # nerdtree-git-plugin
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 hook_add = '''
 let g:NERDTreeShowIgnoredStatus = 1
+'''
+
+# fugitive.vim plugin
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# vim-gitgutter plugin
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+    set diffopt+=vertical
 '''
 
 # color schemer
