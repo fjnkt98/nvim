@@ -44,10 +44,10 @@ RaspbianはDebian系LinuxでありUbuntuとは少し勝手が違うので，NeoV
 UbuntuでNeoVimをインストールするには，`PPA`リポジトリを追加し，`apt`コマンドでインストールする．また，いくつかのPythonライブラリをインストールする必要がある．
 
 ```console
-$sudo add-apt-repository ppa:neovim-ppa/stable
-$sudo apt-get update
-$sudo apt-get install neovim
-$sudo apt-get install python-dev python-pip python3-dev python3-pip
+$ sudo add-apt-repository ppa:neovim-ppa/stable
+$ sudo apt-get update
+$ sudo apt-get install neovim
+$ sudo apt-get install python-dev python-pip python3-dev python3-pip
 ```
 
 2019/05/02現在，Ubuntu18.04LTSでは，`NeoVim 0.3.4`がインストールされた．
@@ -63,14 +63,14 @@ NeoVimはDebianの公式リポジトリに対応してはいるが，それで�
 公開鍵の取得を行う．
 
 ```console
-$sudo apt install dirmngr
-$sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9DBB0BE9366964F134855E2255F96FCF8231B6DD
+$ sudo apt install dirmngr
+$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9DBB0BE9366964F134855E2255F96FCF8231B6DD
 ```
 
 リポジトリの情報を記述するファイルを生成する．
 
 ```console
-$sudo touch /etc/apt/sources.list.d/neovim-ppa.list
+$ sudo touch /etc/apt/sources.list.d/neovim-ppa.list
 ```
 
 ファイルの中には次の2行を記述する．
@@ -83,14 +83,14 @@ deb-src http://ppa.launchpad.net/neovim-ppa/stable/ubuntu xenial main
 あとは`apt`コマンドでインストールすることが出来る．
 
 ```console
-$sudo apt update
-$sudo apt install neovim
+$ sudo apt update
+$ sudo apt install neovim
 ```
 
 インストールが完了したらバージョンを確認する．
 
 ```console
-$nvim -v
+$ nvim -v
 ```
 
 </details>
@@ -101,8 +101,8 @@ $nvim -v
 手順は[`dein.vim`のリポジトリ](https://github.com/Shougo/dein.vim/blob/master/README.md)に書いてある通りを実行すればよい．尚，設定ファイルは本リポジトリに既にあるため書かなくてよい．また，インストールするディレクトリは別段決まっているというわけではないが，ここでは`~/.cache/dein`とする．
 
 ```console
-$curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-$sh ./installer.sh ~/.cache/dein
+$ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+$ sh ./installer.sh ~/.cache/dein
 ```
 
 ### 3. 依存ライブラリのインストール
@@ -114,8 +114,8 @@ Neovim本体及びいくつかのプラグインが依存するライブラリ�
 管理用リポジトリをクローンする．クローンする場所は`~/.config`でなければならない．
 
 ```console
-$cd ~/.config
-$git clone git@github.com:Fkohta/nvim.git
+$ cd ~/.config
+$ git clone git@github.com:KotaFujino98/nvim.git
 ```
 
 あとはNeoVimを起動すれば，プラグインのインストール等を勝手にやってくれるはず．
@@ -131,8 +131,8 @@ $git clone git@github.com:Fkohta/nvim.git
 `pip`を使ってインストールする．
 
 ```console
-$pip install pynvim
-$pip3 install pynvim
+$ pip install pynvim
+$ pip3 install pynvim
 ```
 
 ### Node.js
@@ -143,8 +143,8 @@ LSPクライアントである`coc.nvim`はTypeScript製であるので，これ
 
 Ubuntuの場合(Node.js v10.x)
 ```console
-$curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-$sudo apt-get install -y nodejs
+$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
 ```
 
 ### yarn
@@ -154,9 +154,9 @@ $sudo apt-get install -y nodejs
 `yarn`をインストールするには次のコマンドを実行する．
 
 ```console
-$curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-$echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-$sudo apt update && sudo apt install yarn
+$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+$ sudo apt update && sudo apt install yarn
 ```
 
 ### clangd
@@ -164,13 +164,13 @@ $sudo apt update && sudo apt install yarn
 C言語のLanguage Server．`apt`でインストール出来る．
 
 ```console
-$sudo apt install clang libclang-dev clang-tools
+$ sudo apt install clang libclang-dev clang-tools
 ```
 
-`clangd`コマンドを使えるようになればインストール完了．
+`clang`コマンドを使えるようになればインストール完了．
 
 ```console
-$clangd --version
+$ clang --version
 ```
 
 ### python-language-server
@@ -178,7 +178,7 @@ $clangd --version
 PythonのLanguage Server．`pip`でインストール出来る．
 
 ```console
-$pip install python-language-server
+$ pip install python-language-server
 ```
 
 ### typescript-language-server
@@ -187,11 +187,11 @@ TypeScriptのLanguage Server．TypeScriptの言語サーバだが，JavaScript�
 
 ```console
 # npmプロジェクトのディレクトリで．但しグローバルインストールなのでどのプロジェクトでもよい
-npm install -g typescript typescript-language-server
+$ npm install -g typescript typescript-language-server
 ```
 
 なお，環境によっては上のコマンドでインストールできない場合がある．その場合は`sudo`を付けて行えばインストールは出来る(推奨はされてないっぽいけど)．
 
 ```console
-sudo npm install -g typescript typescript-language-server
+$ sudo npm install -g typescript typescript-language-server
 ```
