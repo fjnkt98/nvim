@@ -167,10 +167,16 @@ C言語のLanguage Server．`apt`でインストール出来る．
 $ sudo apt install clang libclang-dev clang-tools
 ```
 
-`clang`コマンドを使えるようになればインストール完了．
+`clangd`コマンドを使えるようになればインストール完了．
 
 ```console
-$ clang --version
+$ clangd --version
+```
+
+もし`clangd`コマンドが使えなかった場合，パスが通っていないので，以下のように`.bashrc`に追記するとよい．
+
+```console
+$ export PATH=/usr/lib/llvm-6.0/bin:$PATH
 ```
 
 ### python-language-server
