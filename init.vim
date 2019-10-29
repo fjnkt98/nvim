@@ -1,13 +1,18 @@
 " Some options
 set number
-set autoindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
 set splitright
 set clipboard=unnamed
 set hls
 set nowrap
+
+" Indent configuration
+" Default tab size is 2.
+set autoindent
+set expandtab
+set smartindent
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " Split View Movement
 noremap <silent><C-h> <C-w>h
@@ -48,3 +53,5 @@ endif
 
 filetype plugin indent on
 syntax enable
+
+autocmd FileType python setlocal softtabstop=4 shiftwidth=4 tabstop=4 expandtab
