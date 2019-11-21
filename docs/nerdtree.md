@@ -28,6 +28,7 @@
 ### Tree Operations
 
 | Command | Description |
+|   :-:   |     :-:     |
 |    P    | Move root-directory|
 |    p    | Move parent directory|
 |    K    | Move top of tree |
@@ -37,6 +38,7 @@
 
 ### File System Operations
 | Command | Description |
+|   :-:   |     :-:     |
 |    C    | Change root-directory to selected directory |
 |    u    | Make tree root higher |
 |    U    | Maintain state of tree before the change and make tree root higher|
@@ -49,6 +51,7 @@
 ### Other
 
 | Command | Description |
+|   :-:   |     :-:     |
 |    I    | Show and Hide hidden file|
 |    B    | Show and Hide bookmark |
 |    F    | Show and Hide file |
